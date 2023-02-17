@@ -1,8 +1,16 @@
+from random import range 
+from weapon import Weapon
+
 class Robot:
-    def __init__(self, name):
+    def __init__(self, name, weapon):
         self.name = name
-        self.health = 0
-        self.active_weapon = "Weapon"
+        self.health = 100
+        self.active_weapon = weapon.attack_power
 
     def attack(self, dinosaur):
-        pass
+        attack_damage = range(0,3) * self.attack_power
+        if attack_damage == 0:
+            print("Robot misses!")
+        else:
+            print(f"Robot hits for {attack_damage} damge")
+            dinosaur.health -= attack_damage
