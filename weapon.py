@@ -20,7 +20,7 @@ class Weapon:
             self.attack_power = 9
             self.hit_chance = 35
         elif user_input == 3:
-            print("\nThe LaZer Staff is dependable. The working robot's weapon of choice!")
+            print("\nThe LaZer Staff is dependable. The working robot's weapon of choice!\n")
             self.name = 'LaZer Staff'
             self.attack_power = 5
             self.hit_chance = 75

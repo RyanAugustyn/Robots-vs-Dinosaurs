@@ -58,19 +58,25 @@ class Battlefield:
             while self.robot_list != [] and self.dinosaur_list != []:
                 self.robot_list[0].attack(self.dinosaur_list[0])
                 if self.dinosaur_list[0].health <= 0:
-                    print(f"{self.dinosaur_list[0]} has been defeated!\n")
+                    print(f"Dinosaur has been defeated!\n")
                     del self.dinosaur_list[0]
                 elif self.dinosaur_list[0].health >= 0:
                     self.dinosaur_list[0].attack(self.robot_list[0])
+                    if self.robot_list[0].health <= 0:
+                        print("Robot has been defeated!\n")
+                        del self.robot_list[0]
         if random == 2:
             print(f"Team dinosaur strikes first!")
             while self.robot_list != [] and self.dinosaur_list != []:
                 self.dinosaur_list[0].attack(self.robot_list[0])
                 if self.robot_list[0].health <= 0:
-                    print(f"{self.robot_list[0]} has been defeated!\n")
+                    print("Dinosaur has been defeated!\n")
                     del self.robot_list[0]
                 elif self.robot_list[0].health >= 0:
                     self.robot.attack(self.dinosaur_list[0])
+                    if self.dinosaur_list[0].health <= 0:
+                        print("Dinosaur has been defeated!\n")
+                        del self.dinosaur_list[0]
 
     def display_winner(self):
         if self.robot_list != [] and self.dinosaur_list == []:
