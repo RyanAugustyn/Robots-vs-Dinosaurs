@@ -1,4 +1,29 @@
+from random import randrange
+
 class Weapon:
-    def __init__(self, name, attack_power):
-        self.name = name
-        self.attack_power = attack_power
+    def __init__(self, user_input):
+        user_input = int(user_input)
+        #check for correct input
+        if user_input < 1 or user_input > 3:
+            print("Invalid input, weapon randomly chosen")
+            user_input = randrange(1,4)
+
+        if user_input == 1:
+            print("The nunchucks have low damage, but you're very likely to hit something!\n")
+            self.name = 'Robot Nunchucks' 
+            self.attack_power = 3
+            self.hit_chance = 90
+        elif user_input == 2:
+            print("The powerful Yamato Gun is devastating, but is sometimes hard to hit with!\n")
+            self.name = 'Yamato Gun'  
+            self.attack_power = 9
+            self.hit_chance = 35
+        elif user_input == 3:
+            print("The LaZer Staff is dependable. The working robot's weapon of choice!")
+            self.name = 'LaZer Staff'
+            self.attack_power = 5
+            self.hit_chance = 75
+        else:
+            print("incorrect")
+   
+    #ideally weapons would have different damage/nunchucks could attack multiple enemies 
