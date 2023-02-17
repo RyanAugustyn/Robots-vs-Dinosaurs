@@ -1,6 +1,6 @@
 from random import randrange
 from dinosaur import Dinosaur
 
-class Fleet:
+class Herd:
     def __init__(self):
-        self.list =[Dinosaur("Dinosaur-1"), Dinosaur("Dinosaur-2"), Dinosaur("Dinosaur-3")]
+        self.list =[Dinosaur("Dinosaur-1", randrange(4,6)), Dinosaur("Dinosaur-2", randrange(4,6)), Dinosaur("Dinosaur-3", randrange(4,6))]
