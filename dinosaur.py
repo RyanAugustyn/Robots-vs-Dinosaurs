@@ -10,7 +10,7 @@ class Dinosaur:
     def attack(self, robot):
         attack_damage = randrange(0,3) * self.attack_power
         if attack_damage == 0:
-            print("Dinosaur misses!\n")
+            print(f"{self.name} the dinosaur misses!\n")
         else:
             print(f"Dinosaur hits for {attack_damage} damge")
             robot.health -= attack_damage

@@ -5,11 +5,11 @@ from dinosaur import Dinosaur
 
 class Battlefield:
     def __init__(self):
-        self.robot = Robot(input("Please enter a Robot name: "), input("Please choose a \
-            robot weapon,' your choices are\n1 for Robot Nunchucks\n2 for Yamato Gun\
-                \n3 for Laser Staff"))
-        self.dinosaur = Dinosaur(input("Please choose the dinosaur's name"), int(input("Please \
-            choose the dinosaur's power level")))
+        self.robot = Robot(input("Please enter a Robot name: \n"), input("Please choose a "
+            "robot weapon,' your choices are\n1 for Robot Nunchucks\n2 for Yamato Gun"
+            "\n3 for Laser Staff\nEnter input:   "))
+        self.dinosaur = Dinosaur(input("Please choose the dinosaur's name:\n"), int(input("Please "
+        " choose the dinosaur's power level:\n")))
     
     def run_game(self):
         self.display_welcome()
