@@ -6,7 +6,7 @@ from dinosaur import Dinosaur
 class Battlefield:
     def __init__(self):
         self.robot = Robot("MegaWeapon", "Robot Nunchucks")
-        self.dinosaur = Dinosaur("Ted", 5)
+        self.dinosaur = Dinosaur("Dinosaur Ted", 5)
     
     def run_game(self):
         self.display_welcome()
@@ -21,13 +21,13 @@ class Battlefield:
         if random == 1:
             print("Robot strikes first!")
             while self.robot.health > 0 and self.dinosaur.health > 0:
-                self.robot.attack()
-                self.dinosaur.attack()
+                self.robot.attack(self.dinosaur)
+                self.dinosaur.attack(self.robot)
         if random == 2:
             print("Dinosaur strikes first!")
             while self.robot.health > 0 and self.dinosaur.health > 0:
-                self.dinosaur.attack()
-                self.robot.attack()
+                self.dinosaur.attack(self.robot)
+                self.robot.attack(self.dinosaur)
 
     def display_winner(self):
         if self.robot.health > 0 and self.dinosaur.health <= 0:
