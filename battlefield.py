@@ -11,9 +11,18 @@ class Battlefield:
         #initialize lists of combatant(s)
         self.robot_list = []
         self.dinosaur_list = []
-        #check for single or fleet of robots
-        #if single, append choice to list, otherwise load list from fleet.py and herd.py
-        user_input = int(input("Would you like a single robot or a fleet of 3 robots to fight one at a time?"
+                 
+    def run_game(self):
+        self.choose_game_type()
+        self.battle_phase()
+        self.display_winner()
+
+    def display_welcome(self):
+        print("\nWelcome to Robot vs Dinosaur!\n")
+
+    #check for single or fleet of robots and append choice to init lists
+    def choose_game_type(self):
+        user_input = int(input("Would you like a single robot or a fleet of 3 robots to fight one at a time?" 
         "\nChoose 1 for single, 2 for fleet\n"))
         if user_input < 1 or user_input > 2: 
             print("Invalid input, choice randomly made...")
@@ -39,13 +48,7 @@ class Battlefield:
         elif user_input == 2:
             herd = Herd()
             self.dinosaur_list = herd.list
-    
-    def run_game(self):
-        self.battle_phase()
-        self.display_winner()
 
-    def display_welcome(self):
-        print("\nWelcome to Robot vs Dinosaur!\n")
 
 
         #win condition is if list is empty
