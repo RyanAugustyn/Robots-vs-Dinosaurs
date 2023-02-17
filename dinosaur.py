@@ -1,4 +1,4 @@
-from random import range
+from random import randrange
 from robot import Robot
 
 class Dinosaur:
@@ -8,7 +8,7 @@ class Dinosaur:
         self.health = 100
     
     def attack(self, robot):
-        attack_damage = range(0,3) * self.attack_power
+        attack_damage = randrange(0,3) * self.attack_power
         if attack_damage == 0:
             print("Dinosaur misses!")
         else:

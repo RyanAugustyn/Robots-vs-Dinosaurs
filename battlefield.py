@@ -1,4 +1,4 @@
-from random import range
+from random import randrange
 
 from robot import Robot
 from dinosaur import Dinosaur
@@ -9,12 +9,15 @@ class Battlefield:
         self.dinosaur = Dinosaur("Ted", 5)
     
     def run_game(self):
-        pass
+        self.display_welcome()
+        self.battle_phase()
+        self.display_winner()
+
     def display_welcome(self):
         print("Welcome to Robot vs Dinosaur\n\n")
     def battle_phase(self):
         #choose who attacks first
-        random = range(1,2)
+        random = randrange(1,2)
         if random == 1:
             print("Robot strikes first!")
             while self.robot.health > 0 and self.dinosaur.health > 0:
