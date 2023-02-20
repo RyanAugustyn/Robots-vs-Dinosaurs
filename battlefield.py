@@ -57,32 +57,32 @@ class Battlefield:
         #choose who attacks first
         random = randrange(1,2)
         if random == 1:
-            print(f"Team robot strikes first!")
+            print(f"\n\nTeam robot strikes first!\n")
             #win condition is if list is empty
             #check through list if class.health below zero, if yes remove from list
             while self.robot_list != [] and self.dinosaur_list != []:
                 sleep(2) #delay to watch battle progress
                 self.robot_list[0].attack(self.dinosaur_list[0])
                 if self.dinosaur_list[0].health <= 0:
-                    print(f"Dinosaur has been defeated!\n")
+                    print(f"{self.dinosaur_list[0].name} has been defeated!\n")
                     del self.dinosaur_list[0]
                 elif self.dinosaur_list[0].health >= 0:
                     self.dinosaur_list[0].attack(self.robot_list[0])
                     if self.robot_list[0].health <= 0:
-                        print("Robot has been defeated!\n")
+                        print(f"{self.robot_list[0].name} has been defeated!\n")
                         del self.robot_list[0]
         if random == 2:
-            print(f"Team dinosaur strikes first!")
+            print(f"\n\nTeam dinosaur strikes first!\n")
             while self.robot_list != [] and self.dinosaur_list != []:
                 sleep(2) #delay to watch battle progress
                 self.dinosaur_list[0].attack(self.robot_list[0])
                 if self.robot_list[0].health <= 0:
-                    print("Dinosaur has been defeated!\n")
+                    print(f"{self.robot_list[0].name} has been defeated!\n")
                     del self.robot_list[0]
                 elif self.robot_list[0].health >= 0:
                     self.robot.attack(self.dinosaur_list[0])
                     if self.dinosaur_list[0].health <= 0:
-                        print("Dinosaur has been defeated!\n")
+                        print(f"{self.dinosaur_list[0].name} has been defeated!\n")
                         del self.dinosaur_list[0]
 
     def display_winner(self):
