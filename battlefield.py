@@ -43,7 +43,7 @@ class Battlefield:
                 user_input = 1
             if fleet_choice == 1:
                 fleet = Fleet()
-                self.robot_list.append(fleet)
+                self.robot_list = fleet.list
             elif fleet_choice == 2:
                self.robot_list = self.manual_entry(Robot)
 
@@ -65,7 +65,7 @@ class Battlefield:
                 user_input = 1
             if herd_choice == 1:
                 herd = Herd()
-                self.dinosaur_list.append(herd)
+                self.dinosaur_list = herd.list
             elif herd_choice == 2:
                self.dinosaur_list = self.manual_entry(Dinosaur)
 
@@ -78,8 +78,7 @@ class Battlefield:
         string_attack = ''
         if choose_class == Robot:
             string_name = "robot's"
-            string_attack = """Please choose a robot weapon, your choices are\n1 for Robot Nunchucks\n2 for Yamato Gun
-            3 for Laser Staff\nEnter input:    """
+            string_attack = """Please choose a robot weapon, your choices are\n1 for Robot Nunchucks\n2 for Yamato Gun\n3 for Laser Staff\nEnter input:    """
         elif choose_class == Dinosaur:
             string_name = "dinosaur's"
             string_attack = "Please choose the dinosaur's power level (5 is a good starting level):\n"
@@ -104,7 +103,7 @@ class Battlefield:
             #win condition is if list is empty
             #check through list if class.health below zero, if yes remove from list
             while self.robot_list != [] and self.dinosaur_list != []:
-                #sleep(2) #delay to watch battle progress
+                sleep(2) #delay to watch battle progress
                 self.robot_list[0].attack(self.dinosaur_list[0])
                 if self.dinosaur_list[0].health <= 0:
                     print(f"{self.dinosaur_list[0].name} has been defeated!\n")
@@ -117,7 +116,7 @@ class Battlefield:
         if random == 2:
             print(f"\n\nTeam dinosaur strikes first!\n")
             while self.robot_list != [] and self.dinosaur_list != []:
-                #sleep(2) #delay to watch battle progress
+                sleep(2) #delay to watch battle progress
                 self.dinosaur_list[0].attack(self.robot_list[0])
                 if self.robot_list[0].health <= 0:
                     print(f"{self.robot_list[0].name} has been defeated!\n")
