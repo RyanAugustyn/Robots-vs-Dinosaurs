@@ -1,4 +1,5 @@
 from random import randrange
+from time import sleep
 
 from robot import Robot
 from dinosaur import Dinosaur
@@ -20,8 +21,9 @@ class Battlefield:
     def display_welcome(self):
         print("\nWelcome to Robot vs Dinosaur!\n")
 
-    #check for single or fleet of robots and append choice to init lists
+   
     def choose_game_type(self):
+         #check for single or fleet of robots and append choice to init lists
         user_input = int(input("Would you like a single robot or a fleet of 3 robots to fight one at a time?" 
         "\nChoose 1 for single, 2 for fleet\n"))
         if user_input < 1 or user_input > 2: 
@@ -50,15 +52,16 @@ class Battlefield:
             self.dinosaur_list = herd.list
 
 
-
-        #win condition is if list is empty
-        #check through list if class.health below zero, if yes remove from list
+ 
     def battle_phase(self):
         #choose who attacks first
         random = randrange(1,2)
         if random == 1:
             print(f"Team robot strikes first!")
+            #win condition is if list is empty
+            #check through list if class.health below zero, if yes remove from list
             while self.robot_list != [] and self.dinosaur_list != []:
+                sleep(2) #delay to watch battle progress
                 self.robot_list[0].attack(self.dinosaur_list[0])
                 if self.dinosaur_list[0].health <= 0:
                     print(f"Dinosaur has been defeated!\n")
@@ -71,6 +74,7 @@ class Battlefield:
         if random == 2:
             print(f"Team dinosaur strikes first!")
             while self.robot_list != [] and self.dinosaur_list != []:
+                sleep(2) #delay to watch battle progress
                 self.dinosaur_list[0].attack(self.robot_list[0])
                 if self.robot_list[0].health <= 0:
                     print("Dinosaur has been defeated!\n")

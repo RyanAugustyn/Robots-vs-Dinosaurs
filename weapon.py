@@ -13,7 +13,7 @@ class Weapon:
             self.name = 'Robot Nunchucks' 
             self.attack_power = 3
             self.hit_chance = 90
-            self.attack_message = ["whip around with lightning speed!"] #message to pull from
+            self.attack_message = ["whip around with lightning speed!"] #not implemented, alternating messages for the weapons
         elif user_input == 2:
             print("\nThe powerful Yamato Gun is devastating, but is sometimes hard to hit with!\n")
             self.name = 'Yamato Gun'  
@@ -26,5 +26,3 @@ class Weapon:
             self.hit_chance = 75
         else:
             print("incorrect")
-   
-    #ideally weapons would have different damage/nunchucks could attack multiple enemies 
