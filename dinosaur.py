@@ -14,5 +14,7 @@ class Dinosaur:
         else:
             print(f"{self.name} the dinosaur hits for {attack_damage} damge")
             robot.health -= attack_damage
+            if robot.health < 0:
+                robot.health = 0
             print(f"{robot.name} the robot currently has {robot.health} health remaining\n\n")
 

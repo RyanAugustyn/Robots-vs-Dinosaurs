@@ -17,9 +17,13 @@ class Robot:
             attack_damage = 5 * self.active_weapon.attack_power 
             print(f"{self.name} the robot hits for {attack_damage} damge")
             dinosaur.health -= attack_damage
+            if dinosaur.health < 0:
+                dinosaur.health = 0
             print(f"{dinosaur.name} currently has {dinosaur.health} health remaining\n\n")
         else:
             attack_damage = randrange(1,3) * self.active_weapon.attack_power 
             print(f"{self.name} the robot hits for {attack_damage} damge")
             dinosaur.health -= attack_damage
+            if dinosaur.health < 0:
+                dinosaur.health = 0
             print(f"{dinosaur.name} the dinosaur currently has {dinosaur.health} health remaining\n\n")
